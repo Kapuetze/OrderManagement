@@ -7,6 +7,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Dpependency Injection
+builder.Services.AddOrderManagementCore();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

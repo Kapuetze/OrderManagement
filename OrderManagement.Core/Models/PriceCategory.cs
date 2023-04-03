@@ -1,5 +1,5 @@
 namespace OrderManagement.Core.Models;
-public class PriceGroup : BaseModel
+public class PriceCategory : BaseModel
 {
     public int OrganisationID { get; set; }
     public string Color { get; set; }

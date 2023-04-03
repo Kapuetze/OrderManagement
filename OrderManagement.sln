@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagement.Api", "Orde
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagement.Core", "OrderManagement.Core\OrderManagement.Core.csproj", "{4F75ED84-DDF0-4C36-A97F-C25651B6B2B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagement.Core.Tests", "OrderManagement.Core.Tests\OrderManagement.Core.Tests.csproj", "{B3B27723-0A5F-40C4-A52B-B6EFC6E0EEB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagement.Api.Tests", "OrderManagement.Api.Tests\OrderManagement.Api.Tests.csproj", "{B7A97CA2-27CE-4C22-BDA2-6B14FBAD427D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{4F75ED84-DDF0-4C36-A97F-C25651B6B2B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F75ED84-DDF0-4C36-A97F-C25651B6B2B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F75ED84-DDF0-4C36-A97F-C25651B6B2B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3B27723-0A5F-40C4-A52B-B6EFC6E0EEB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3B27723-0A5F-40C4-A52B-B6EFC6E0EEB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3B27723-0A5F-40C4-A52B-B6EFC6E0EEB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3B27723-0A5F-40C4-A52B-B6EFC6E0EEB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7A97CA2-27CE-4C22-BDA2-6B14FBAD427D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7A97CA2-27CE-4C22-BDA2-6B14FBAD427D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7A97CA2-27CE-4C22-BDA2-6B14FBAD427D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7A97CA2-27CE-4C22-BDA2-6B14FBAD427D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

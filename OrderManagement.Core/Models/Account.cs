@@ -5,4 +5,5 @@ public class Account : BaseModel
 
     // Each account can have a list of contacts to select from
     public int ContactID { get; set; }
+    public decimal Credit { get; set; }
 }

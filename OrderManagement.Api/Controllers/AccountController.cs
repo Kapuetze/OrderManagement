@@ -13,13 +13,15 @@ public class AccountController : ApiController<AccountController>
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<Account> Get()
+    [HttpGet]
+    public async Task<IEnumerable<Account>> Get()
     {
-        return Enumerable.Range(1, 5).Select(index => new Account
-        {
-            
-        })
-        .ToArray();
+        return new List<Account>();
+    }
+
+    [HttpPost]
+    public async Task Post(Account account)
+    {
+
     }
 }
