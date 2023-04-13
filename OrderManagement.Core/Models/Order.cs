@@ -1,12 +1,12 @@
 namespace OrderManagement.Core.Models;
 public class Order : BaseModel
 {
-    public int OrganisationID { get; set; }
-    public int AccountID { get; set; }
+    public virtual Organisation Organisation { get; set; }
+    public virtual Account Account { get; set; }
     public DateTimeOffset Date { get; set; }
     public OrderStatus Status { get; set; }
-    public int BillingContactID { get; set; }
-    public int ShippingContactID { get; set; }
+    public Contact BillingContact { get; set; }
+    public Contact ShippingContact { get; set; }
 }
 
 public enum OrderStatus

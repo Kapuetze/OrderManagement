@@ -1,8 +1,11 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace OrderManagement.Core.Models;
 public class BaseModel
 {
-    public int ID { get; set; }
-    public Guid UniqueID { get; set; }
+    [Key]
+    public int Id { get; set; }
+    public Guid UniqueId { get; set; }
     public DateTime DateCreated { get; set; }
     public DateTime DateModified { get; set; }
 }

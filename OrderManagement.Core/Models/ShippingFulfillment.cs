@@ -1,6 +1,6 @@
 namespace OrderManagement.Core.Models;
 public class Shipping : BaseModel
 {
-    public int OrderItemID { get; set; }
+    public int OrderItemId { get; set; }
     public DateTimeOffset DateShipped { get; set; }
 }

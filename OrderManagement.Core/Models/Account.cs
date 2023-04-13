@@ -1,9 +1,10 @@
 namespace OrderManagement.Core.Models;
 public class Account : BaseModel
 {
-    public int OrganisationID { get; set; }
+    public virtual Organisation Organisation { get; set; }
 
     // Each account can have a list of contacts to select from
-    public int ContactID { get; set; }
+    public virtual Contact Contact { get; set; }
+
     public decimal Credit { get; set; }
 }

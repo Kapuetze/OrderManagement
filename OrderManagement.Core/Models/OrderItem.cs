@@ -1,9 +1,9 @@
 namespace OrderManagement.Core.Models;
 public class OrderItem : BaseModel
 {
-    public int OrderID { get; set; }
-    public int ProductID { get; set; }
-    public int PriceGroupDetailID { get; set; }
+    public int OrderId { get; set; }
+    public int ProductId { get; set; }
+    public int PriceGroupDetailId { get; set; }
     public decimal Price { get; set; }
     public decimal Total { get; set; }
     public decimal Shipping { get; set; }

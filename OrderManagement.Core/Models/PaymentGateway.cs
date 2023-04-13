@@ -1,7 +1,7 @@
 namespace OrderManagement.Core.Models;
 public class PaymentGateway : BaseModel
 {
-    public int OrganisationID { get; set; }
+    public Organisation Organisation { get; set; }
     public PaymentGatewayType Type { get; set; }
     public string? Identifier { get; set; }
     public string? ApiKey { get; set; }

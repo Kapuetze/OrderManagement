@@ -1,14 +1,26 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace OrderManagement.Core.Models;
 public class Contact : BaseModel
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Company { get; set; }
-    public string Street { get; set; }
-    public string City { get; set; }
-    public string PostalCode { get; set; }
-    public string Country { get; set; }
-    public string State { get; set; }
-    public string Email { get; set; }
-    public string Phone { get; set; }
+    [StringLength(50)]
+    public string? FirstName { get; set; }
+    [StringLength(50)]
+    public string? LastName { get; set; }
+    [StringLength(150)]
+    public string? Company { get; set; }
+    [StringLength(100)]
+    public string? Street { get; set; }
+    [StringLength(100)]
+    public string? City { get; set; }
+    [StringLength(10)]
+    public string? PostalCode { get; set; }
+    [StringLength(100)]
+    public string? Country { get; set; }
+    [StringLength(100)]
+    public string? State { get; set; }
+    [StringLength(150)]
+    public string? Email { get; set; }
+    [StringLength(50)]
+    public string? Phone { get; set; }
 }
