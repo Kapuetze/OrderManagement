@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,8 +9,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Dpependency Injection
+// Dependency Injection
 builder.Services.AddOrderManagementCore();
+
+builder.Services.AddAuthentication();
+
+builder.Services.AddAutoMapper(typeof(Program)); 
+
+// Swagger
+builder.Services.AddSwaggerGen(c =>
+{                     
+    c.CustomSchemaIds(x => x.GetCustomAttributes(false).OfType<DisplayNameAttribute>().FirstOrDefault()?.DisplayName ?? x.Name);
+});
 
 var app = builder.Build();
 
@@ -21,6 +33,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

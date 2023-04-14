@@ -3,7 +3,7 @@ using OrderManagement.Core.Models;
 using OrderManagement.Core.DataLayer;
 using Microsoft.EntityFrameworkCore;
 
-namespace OrderManagement.Core.ApplicationLayer.Accounts;
+namespace OrderManagement.Core.ApplicationLogic.Accounts;
 
 public class AccountLogic
 {

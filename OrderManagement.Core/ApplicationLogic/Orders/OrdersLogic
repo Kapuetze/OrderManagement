@@ -3,7 +3,7 @@ using OrderManagement.Core.Models;
 using OrderManagement.Core.DataLayer.Repositories;
 using OrderManagement.Core.DataLayer;
 
-namespace OrderManagement.Core.ApplicationLayer.Orders;
+namespace OrderManagement.Core.ApplicationLogic.Orders;
 
 public class OrdersLogic
 {

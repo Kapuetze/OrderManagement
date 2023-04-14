@@ -1,6 +1,8 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using OrderManagement.Core.ApplicationLayer.Accounts;
+using OrderManagement.Api.Models;
 using OrderManagement.Core.Models;
+using OrderManagement.Core.ApplicationLogic.Accounts;
 
 namespace OrderManagement.Api.Controllers;
 
@@ -10,29 +12,45 @@ public class AccountController : ApiController<AccountController>
 {
     readonly ILogger<AccountController> _logger;
     readonly AccountLogic _accountLogic;
-    public AccountController(ILogger<AccountController> logger, AccountLogic accountLogic)
+    readonly OrganisationLogic _organisationLogic;
+    readonly IMapper _mapper;
+    public AccountController(ILogger<AccountController> logger, IMapper mapper, AccountLogic accountLogic, OrganisationLogic organisationLogic)
     {
         _logger = logger;
+        _mapper = mapper;
         _accountLogic = accountLogic;
+        _organisationLogic = organisationLogic;
     }
 
     [HttpGet]
-    public async Task<IEnumerable<Account>> Get()
+    public async Task<IEnumerable<AccountDTO>> Get()
     {
-        var accounts = await _accountLogic.GetList(0);
-        return accounts;
+        var accounts = await _accountLogic.GetList(1);
+        var result = _mapper.Map<IEnumerable<Account>, IEnumerable<AccountDTO>>(accounts);
+        return result;
     }
 
     [HttpGet("{id}")]
-    public async Task<Account> Get(Guid id)
+    public async Task<AccountDTO> Get(Guid id)
     {
         var account = await _accountLogic.Get(id);
-        return account;
+        var result = _mapper.Map<Account, AccountDTO>(account);
+        return result;
     }
 
     [HttpPost]
-    public async Task Post(Account account)
+    public async Task Post()
     {
-        await _accountLogic.Create(account);
+        var newAccount = new Account
+        {
+            Organisation = await _organisationLogic.Get(new Guid("48e16053-daac-11ed-95c6-4cdc697a295f")),
+            Contact = new Contact 
+            {
+                FirstName = "Jonas",
+                LastName = "Berger"
+            }
+        };
+
+        await _accountLogic.Create(newAccount);
     }
 }

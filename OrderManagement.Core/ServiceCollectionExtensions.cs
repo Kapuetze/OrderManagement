@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using OrderManagement.Core.ApplicationLayer.Accounts;
+using OrderManagement.Core.ApplicationLogic.Accounts;
 using OrderManagement.Core.DataLayer;
+using OrderManagement.Core.Models;
 
 public static class ServiceCollectionExtensions
 {
@@ -14,7 +15,11 @@ public static class ServiceCollectionExtensions
                 // configure all queries to be split by default
                 o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)));
 
+        // services.AddIdentity<User, IdentityRole>()
+        //     .AddEntityFrameworkStore<ApplicationContext>();
+
         // Transients
         services.AddTransient<AccountLogic>();
+        services.AddTransient<OrganisationLogic>();
     }
 }

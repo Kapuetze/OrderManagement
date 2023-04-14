@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OrderManagement.Core.DataLayer;
 
@@ -10,9 +11,11 @@ using OrderManagement.Core.DataLayer;
 namespace OrderManagement.Core.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230414095139_ChangedOrgModel")]
+    partial class ChangedOrgModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +38,6 @@ namespace OrderManagement.Core.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime>("DateModified")
-                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("OrganisationId")
@@ -75,7 +77,6 @@ namespace OrderManagement.Core.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime>("DateModified")
-                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
@@ -133,7 +134,6 @@ namespace OrderManagement.Core.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime>("DateModified")
-                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("OrganisationId")
@@ -174,7 +174,6 @@ namespace OrderManagement.Core.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime>("DateModified")
-                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
@@ -205,7 +204,6 @@ namespace OrderManagement.Core.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime>("DateModified")
-                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
