@@ -39,17 +39,11 @@ public class AccountController : ApiController<AccountController>
     }
 
     [HttpPost]
-    public async Task Post()
+    public async Task Post(AccountDTO account)
     {
-        var newAccount = new Account
-        {
-            Organisation = await _organisationLogic.Get(new Guid("48e16053-daac-11ed-95c6-4cdc697a295f")),
-            Contact = new Contact 
-            {
-                FirstName = "Jonas",
-                LastName = "Berger"
-            }
-        };
+        var newAccount = _mapper.Map<AccountDTO, Account>(account);
+        // Set the owner organisation
+        newAccount.Organisation = await _organisationLogic.Get(new Guid("48e16053-daac-11ed-95c6-4cdc697a295f"));
 
         await _accountLogic.Create(newAccount);
     }

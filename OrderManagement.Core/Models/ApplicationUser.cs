@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
 namespace OrderManagement.Core.Models;
-public class Account : IdentityUser<int>, IBaseModel
+public class ApplicationUser : IdentityUser<int>, IBaseModel
 {
     public Guid UniqueId { get; set; }
     public DateTime DateCreated { get; set; }
@@ -10,14 +10,7 @@ public class Account : IdentityUser<int>, IBaseModel
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
     public DateTime DateModified { get; set; }
     
-    public virtual Organisation Organisation { get; set; }
-
-    // Each account can have a list of contacts to select from
-    public virtual Contact? Contact { get; set; }
-
-    public decimal Credit { get; set; }
-
-    public Account()
+    public ApplicationUser()
     {
         UniqueId = Guid.NewGuid();
         DateCreated = DateTime.UtcNow;

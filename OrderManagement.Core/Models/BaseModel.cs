@@ -2,7 +2,16 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OrderManagement.Core.Models;
-public class BaseModel
+
+public interface IBaseModel
+{
+    public int Id { get; set; }
+    public Guid UniqueId { get; set; }
+    public DateTime DateCreated { get; set; }
+    public DateTime DateModified { get; set; }
+}
+
+public class BaseModel : IBaseModel
 {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Key]

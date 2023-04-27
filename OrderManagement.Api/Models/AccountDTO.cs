@@ -6,7 +6,7 @@ namespace OrderManagement.Api.Models;
 public class AccountDTO : BaseModelDTO
 {
     // Each account can have a list of contacts to select from
-    public virtual ContactDTO Contact { get; set; }
+    public ContactDTO Contact { get; set; }
 
     public decimal Credit { get; set; }
 }

@@ -20,6 +20,8 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddSwaggerGen(c =>
 {                     
     c.CustomSchemaIds(x => x.GetCustomAttributes(false).OfType<DisplayNameAttribute>().FirstOrDefault()?.DisplayName ?? x.Name);
+    c.EnableAnnotations();
+    //c.IncludeXmlComments();
 });
 
 var app = builder.Build();

@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
+
 namespace OrderManagement.Core.Models;
-public class User : BaseModel
+public class ManagementUser : BaseModel
 {
     public virtual Contact Contact { get; set; }
     public string Email { get; set; }
