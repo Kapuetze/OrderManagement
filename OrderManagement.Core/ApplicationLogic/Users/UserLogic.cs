@@ -19,7 +19,7 @@ public class UserLogic
     public async Task<IdentityResult> Create(ApplicationUser user, string password)
     {
         return await _userManager.CreateAsync(user, password);     
-    }  
+    }
 
     public async Task<ApplicationUser?> Get(Guid id)
     {
