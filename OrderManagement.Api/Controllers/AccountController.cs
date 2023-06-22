@@ -12,9 +12,9 @@ public class AccountController : ApiController<AccountController>
 {
     readonly ILogger<AccountController> _logger;
     readonly AccountLogic _accountLogic;
-    readonly OrganisationLogic _organisationLogic;
+    readonly IOrganisationLogic _organisationLogic;
     readonly IMapper _mapper;
-    public AccountController(ILogger<AccountController> logger, IMapper mapper, AccountLogic accountLogic, OrganisationLogic organisationLogic)
+    public AccountController(ILogger<AccountController> logger, IMapper mapper, AccountLogic accountLogic, IOrganisationLogic organisationLogic)
     {
         _logger = logger;
         _mapper = mapper;
@@ -31,7 +31,7 @@ public class AccountController : ApiController<AccountController>
     }
 
     [HttpGet("{id}")]
-    public async Task<AccountDTO> Get(Guid id)
+    public async Task<AccountDTO> GetById(Guid id)
     {
         var account = await _accountLogic.Get(id);
         var result = _mapper.Map<Account, AccountDTO>(account);

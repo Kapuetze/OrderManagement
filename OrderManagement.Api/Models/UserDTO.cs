@@ -1,6 +1,8 @@
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace OrderManagement.Api.Models;
+[DisplayName("User")]
 public class UserDTO : BaseModelDTO
 {
     [Required]

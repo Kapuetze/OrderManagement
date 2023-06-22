@@ -5,7 +5,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace OrderManagement.Core.ApplicationLogic.Accounts;
 
-public class OrganisationLogic
+public interface IOrganisationLogic
+{
+	Task<Organisation> Get(Guid id);
+	Task Create(Organisation organisation);
+}
+
+internal class OrganisationLogic : IOrganisationLogic
 {
     ApplicationContext _dbContext;
     public OrganisationLogic(ApplicationContext dbContext)
