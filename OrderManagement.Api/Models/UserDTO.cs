@@ -10,5 +10,5 @@ public class UserDTO : BaseModelDTO
     [Required]
     public string UserName { get; set; }
 
-    public virtual ContactDTO Contact { get; set; }
+    // public virtual ContactDTO Contact { get; set; }
 }

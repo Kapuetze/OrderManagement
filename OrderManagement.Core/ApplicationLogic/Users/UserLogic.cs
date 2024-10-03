@@ -3,6 +3,8 @@ using OrderManagement.Core.Models;
 using OrderManagement.Core.DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
+
 
 namespace OrderManagement.Core.ApplicationLogic.Users;
 
@@ -21,8 +23,18 @@ public class UserLogic
         return await _userManager.CreateAsync(user, password);     
     }
 
+    public async Task<bool> CheckPassword(ApplicationUser user, string password)
+	{
+		return await _userManager.CheckPasswordAsync(user, password);
+	}
+
     public async Task<ApplicationUser?> Get(Guid id)
     {
         return await _dbContext.Users.FirstOrDefaultAsync(i => i.UniqueId == id);
     }
+
+	public async Task<ApplicationUser?> GetByEmail(string email)
+	{
+		return await _userManager.FindByEmailAsync(email);
+	}
 }

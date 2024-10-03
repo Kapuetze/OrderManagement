@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using Microsoft.AspNetCore.OpenApi;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace OrderManagement.Api.Models;
